@@ -14,6 +14,7 @@ while ((Mid + k <= size) && (arr[Mid + k] == value))
 n += 1;
 k++;
 }
+  k=1;
 while ((Mid - k >= 0) && (arr[Mid - k] == value))
 {
 n += 1;
