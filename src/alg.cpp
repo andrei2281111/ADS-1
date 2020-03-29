@@ -10,6 +10,7 @@ int count(int arr[],const int el,const int size)
             ++count;
             if (l != &arr[0])
                 --l;
+            else break;
         }
     }
     int *r = nullptr;
@@ -21,6 +22,7 @@ int count(int arr[],const int el,const int size)
             ++count;
             if (r != &arr[size])
                 ++r;
+            else break;
         }
     }
     return count;
@@ -28,15 +30,16 @@ int count(int arr[],const int el,const int size)
 
 int cbinsearch(int arr[], int size, int key)
 {
-    int s = 0;
+    int r = 0;
     int l = size;
-    while (l >= 0 || s < size)
+    while (r<=l)
     {
-        int el = (s + l) / 2;
+        int el = (r+l) / 2;
         if (arr[el] > key)
-            --l;
+            l = el - 1;
         else if (arr[el] < key)
-            ++s;
+            r = el + 1;
         else return count(arr, el, size);
     }
+    return 0;
 }
