@@ -9,10 +9,10 @@ int d = 0;
         int middle = (a+b)/2;
           if (arr[middle] == value) 
             d=middle;
-          if (arr[middle] < value)
-            a = middle + 1;
-          else
+          if (arr[middle] > value)
             b = middle - 1;
+          else
+            a = middle + 1;
      }
      while (arr[d] == value)
      {
