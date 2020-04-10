@@ -1,4 +1,4 @@
-int b_search(int* mas, int size, int value) {
+int b_search(int* arr, int size, int value) {
 
 	int mid = 0;
 	int pos = -1;
@@ -6,10 +6,10 @@ int b_search(int* mas, int size, int value) {
 	int right = size - 1;
 	while (left <= right) {
 		mid = (left + right) / 2;
-		if (mas[mid] == value) pos = mid;
+		if (arr[mid] == value) pos = mid;
 
 
-		if (mas[mid] < value) left = mid + 1;
+		if (arr[mid] < value) left = mid + 1;
 		else right = mid - 1;
 
 	}
@@ -21,9 +21,9 @@ int b_search(int* mas, int size, int value) {
 	right = size - 1;
 	while (left <= right) {
 		mid = (left + right) / 2;
-		if (mas[mid] == value) pos1 = mid;
+		if (arr[mid] == value) pos1 = mid;
 
-		if (mas[mid] > value) right = mid - 1;
+		if (arr[mid] > value) right = mid - 1;
 		else left = mid + 1;
 
 	}
