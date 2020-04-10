@@ -1,4 +1,4 @@
-int b_search(int* arr, int size, int value) {
+int cbinsearch(int* arr, int size, int value) {
 
 	int mid = 0;
 	int pos = -1;
