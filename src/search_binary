@@ -1,0 +1,25 @@
+int b_search(int mas[], int elem, int left, int right, int xd) {
+    int s = 0;
+    int x1 = -1;
+    while (left <= right) {
+        s = (left + right) / 2;
+        if (mas[s] == elem) x1 = s;
+        if (xd == 0) {
+            if (mas[s] > elem) right = s - 1;
+            else left = s + 1;
+        }
+        else {
+            if (mas[s] < elem) left = s + 1;
+            else right = s - 1;
+        }
+    }
+    return x1;
+}
+
+//дальше то, что мы пишем в main, при условии, что массив отсортирован заранее
+/*
+znach = b_search(mas, elem, 0, n - 1, 0);
+znach2 = b_search(mas, elem, 0, n - 1, 1);
+
+kol_vo_elem = (znach - znach2 + 1);
+*/
