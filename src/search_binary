@@ -1,23 +1,33 @@
-int b_search(int mas[], int elem, int left, int right) {
-    int s = 0;
-    int x1 = -1;
-    while (left <= right) {
-        s = (left + right) / 2;
-        if (mas[s] == elem) x1 = s;
-        if (mas[s] > elem) right = s - 1;
-        else left = s + 1;
-    }
-    
-    int s = 0;
-    int x2 = -1;
-    while (left <= right) {
-        s = (left + right) / 2;
-        if (mas[s] == elem) x2 = s;
-        if (mas[s] < elem) left = s + 1;
-        else right = s - 1;
-    }
+int b_search(int* mas, int size, int value) {
 
-    int kol_vo_elem = x1 - x2 + 1;
-    
-    return kol_vo_elem;
+	int mid = 0;
+	int pos = -1;
+	int left = 0;
+	int right = size - 1;
+	while (left <= right) {
+		mid = (left + right) / 2;
+		if (mas[mid] == value) pos = mid;
+
+
+		if (mas[mid] < value) left = mid + 1;
+		else right = mid - 1;
+
+	}
+
+
+	mid = 0;
+	int pos1 = -1;
+	left = 0;
+	right = size - 1;
+	while (left <= right) {
+		mid = (left + right) / 2;
+		if (mas[mid] == value) pos1 = mid;
+
+		if (mas[mid] > value) right = mid - 1;
+		else left = mid + 1;
+
+	}
+
+	if ((pos1 == -1) && (pos == -1)) return 0; else
+		return pos1 - pos + 1;
 }
