@@ -1,4 +1,5 @@
-int cbinsearch(int* arr, const int& size, const int& value) {
+
+int cbinsearch(int* arr, int size, int value) {
     int* lower = arr;
     int size1 = size;
     while (size1 > 0) {
